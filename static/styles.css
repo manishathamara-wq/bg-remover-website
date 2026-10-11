@@ -1,0 +1,333 @@
+:root {
+  --bg: #0d1321;
+  --bg-soft: #121b2d;
+  --panel: rgba(17, 25, 40, 0.8);
+  --panel-border: rgba(255, 255, 255, 0.08);
+  --text: #eaf2ff;
+  --muted: #b3c2d8;
+  --primary: #6ea8fe;
+  --primary-strong: #4f8ef7;
+  --accent: #7ef0d4;
+  --danger: #ff6b7d;
+  --shadow: rgba(0, 0, 0, 0.24);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(110, 168, 254, 0.18), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(126, 240, 212, 0.14), transparent 28%),
+    linear-gradient(135deg, #0d1321 0%, #0c1729 100%);
+  color: var(--text);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+label {
+  font: inherit;
+}
+
+.page-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 12px 24px;
+}
+
+.brand-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #07111d;
+  font-weight: 800;
+}
+
+nav {
+  display: flex;
+  gap: 22px;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--text);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 28px;
+  align-items: center;
+  padding: 32px 0 22px;
+}
+
+.hero-copy {
+  padding: 24px 12px;
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  background: rgba(110, 168, 254, 0.13);
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 6vw, 4.7rem);
+  line-height: 0.97;
+  letter-spacing: -0.06em;
+}
+
+.hero-copy p {
+  margin-top: 18px;
+  max-width: 600px;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.cta-row {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.primary-btn,
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  padding: 0 22px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+  color: white;
+  box-shadow: 0 12px 28px rgba(79, 142, 247, 0.38);
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--panel-border);
+  color: var(--text);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-1px);
+}
+
+.upload-card {
+  background: rgba(19, 30, 48, 0.8);
+  border: 1px solid var(--panel-border);
+  box-shadow: var(--shadow) 0 18px 45px;
+  border-radius: 24px;
+  padding: 18px;
+}
+
+.dropzone {
+  min-height: 350px;
+  border: 2px dashed rgba(126, 240, 212, 0.45);
+  border-radius: 20px;
+  background: rgba(126, 240, 212, 0.04);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.dropzone:hover,
+.dropzone.dragover {
+  border-color: var(--accent);
+  background: rgba(126, 240, 212, 0.08);
+}
+
+.upload-inner {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+}
+
+.upload-icon {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+  border-radius: 18px;
+  background: rgba(126, 240, 212, 0.1);
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+.file-meta {
+  margin-top: 14px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.results-panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.result-card {
+  background: rgba(17, 25, 40, 0.75);
+  border: 1px solid var(--panel-border);
+  border-radius: 22px;
+  overflow: hidden;
+  min-height: 360px;
+}
+
+.card-head {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.card-head h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.image-box {
+  min-height: 300px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding: 16px;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: linear-gradient(45deg, #0a1018 25%, transparent 25%),
+    linear-gradient(-45deg, #0a1018 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #0a1018 75%),
+    linear-gradient(-45deg, transparent 75%, #0a1018 75%);
+  background-size: 24px 24px;
+  background-position: 0 0, 0 12px, 12px -12px, -12px 0;
+}
+
+.placeholder {
+  color: var(--muted);
+  text-align: center;
+  padding: 24px;
+}
+
+.features {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.feature-item {
+  background: rgba(17, 25, 40, 0.75);
+  border: 1px solid var(--panel-border);
+  border-radius: 18px;
+  padding: 24px 20px;
+}
+
+.feature-item h4 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+}
+
+.feature-item p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.footer {
+  text-align: center;
+  color: var(--muted);
+  padding-top: 28px;
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .results-panel,
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .topbar {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  nav {
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .page-shell {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
